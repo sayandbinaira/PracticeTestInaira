@@ -38,3 +38,5 @@ git branch -d <branch name>
 ```
 git push origin --delete <branch name>
 ```
+
+### Commit a change
