@@ -47,11 +47,11 @@ git push origin --delete <branch name>
 ```
 git checkout -b yourname
 ```
-5. In the file practice.py add a print statement with your name
+4. In the file practice.py add a print statement with your name
 ```
 print("<your name>")
 ```
-4. To check which files or their changes are being tracked by git use the below command
+5. To check which files or their changes are being tracked by git use the below command
 ```
 git status
 ```
@@ -63,7 +63,7 @@ git status
 
 It displays file paths that have differences between the index file and the current HEAD commit.
 
-5. For adding practice.py to staged area use the below command
+6. For adding practice.py to staged area use the below command
 ```
 git add <unstaged file path>
 ```
@@ -74,7 +74,7 @@ git add practice.py
 This is a pre-requisite step for comitting your changes
 
 
-6. For committing files use the below command
+7. For committing files use the below command
 ```
 git commit -m "<Your message>"
 ```
