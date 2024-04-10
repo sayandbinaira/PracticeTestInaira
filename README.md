@@ -45,11 +45,11 @@ git push origin --delete <branch name>
 2. Open the terminal from IDE
 3. Checkout a new branch with your name from main using checkout -b command
 ```
-git checkout -b yourname
+git checkout -b <yourname>
 ```
 4. In the file practice.py add a print statement with your name
 ```
-print("<your name>")
+print("First print statement")
 ```
 5. To check which files or their changes are being tracked by git use the below command
 ```
@@ -82,6 +82,42 @@ In our example -
 ```
 git commit -m "First commit by yourname"
 ```
+
+### Push Pull
+1. After the commit for pushing the changes to remote repo use the below command
+```
+git push origin <yourname>
+```
+2. Checkout to main branch using the below command
+```
+git checkout main
+```
+3. For pulling the changes from remote branch to your main branch in local use the below command
+```
+git pull origin main
+```
+
+### Merging a branch and committing it
+1. Checkout to your branch <yourname>
+2. Create a new branch from your branch <yourname> with name dummyBranch
+3. In the file practice.py add a print statement
+```
+print("New print statemnt in new branch")
+```
+4. Add the file practice.py to staging area and commit the changes
+5. Checkout to your original branch <yourname>
+6. Check all your commits with the below command
+```
+git log
+```
+7. Type q to exit the log here
+<img width="388" alt="qExit" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/d3956af4-5cbf-47c4-97f5-fb30395a28ee">
+
+9. Merge the branch dummyBranch to <yourname> using the below command
+```
+git merge dummyBranch
+```
+10. Again when you check all the commits, one can see the commit of dummyBranch in branch <yourname>
 
 
    
