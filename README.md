@@ -113,11 +113,11 @@ git log
 7. Type q to exit the log here
 <img width="388" alt="qExit" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/d3956af4-5cbf-47c4-97f5-fb30395a28ee">
 
-9. Merge the branch dummyBranch to <yourname> using the below command
+8. Merge the branch dummyBranch to <yourname> using the below command
 ```
 git merge dummyBranch
 ```
-10. Again when you check all the commits, one can see the commit of dummyBranch in branch <yourname>
+9. Again when you check all the commits, one can see the commit of dummyBranch in branch <yourname>
 
 
    
