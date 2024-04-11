@@ -15,7 +15,7 @@ cd <folder path>
 ```
 git clone <repo link>
 ```
-4. Repo link can be found here
+4. Repo link can be found by clicking on code
 <img width="313" alt="Screenshot 2024-04-09 123641" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/895e28a3-9b25-4a91-9d0c-f010349715dc">
 
 ### Branch operations
@@ -45,11 +45,11 @@ git push origin --delete <branch name>
 2. Open the terminal from IDE
 3. Checkout a new branch with your name from main using checkout -b command
 ```
-git checkout -b <yourname>
+git checkout -b yourname
 ```
 4. In the file practice.py add a print statement with your name
 ```
-print("First print statement")
+print("First print statement by <yourname>")
 ```
 5. To check which files or their changes are being tracked by git use the below command
 ```
@@ -86,13 +86,13 @@ git commit -m "First commit by yourname"
 ### Push Pull
 1. After the commit for pushing the changes to remote repo use the below command
 ```
-git push origin <yourname>
+git push origin yourname
 ```
 2. Checkout to main branch using the below command
 ```
 git checkout main
 ```
-3. For pulling the changes from remote branch to your main branch in local use the below command
+3. For pulling the changes from main branch in remote rep to your main branch in local use the below command
 ```
 git pull origin main
 ```
@@ -105,7 +105,7 @@ git pull origin main
 print("New print statemnt in new branch")
 ```
 4. Add the file practice.py to staging area and commit the changes
-5. Checkout to your original branch <yourname>
+5. Checkout to your original branch yourname
 6. Check all your commits with the below command
 ```
 git log
@@ -113,11 +113,37 @@ git log
 7. Type q to exit the log here
 <img width="388" alt="qExit" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/d3956af4-5cbf-47c4-97f5-fb30395a28ee">
 
-8. Merge the branch dummyBranch to <yourname> using the below command
+8. Merge the branch dummyBranch to yourname using the below command
 ```
 git merge dummyBranch
 ```
-9. Again when you check all the commits, one can see the commit of dummyBranch in branch <yourname>
+9. Again when you check all the commits, one can see the commit of dummyBranch in branch yourname
 
 
+### Raising a Pull Request
+1. In the github repo, go to pull requests
+<img width="784" alt="PR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/dc698550-4efc-478d-8116-3d583787855f">
+
+2. Click on new pull request
    
+<img width="726" alt="NewPR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/5ae60847-5719-4f18-8a08-ab0494ab4bf9">
+
+3. Choose the branch that you want to merge in compare and the base branch in which you want to merge. In this case compare branch will be yourname and base branch will be main
+<img width="731" alt="CompBaseBranch" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/65e25220-95f2-4ab2-abdc-f9188d1c1eee">
+
+4. Create a pull request by clicking on Create Pull Request. (If there are no diff between two branches then this button will be disabled)
+   
+<img width="768" alt="CreatePR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/138f3e85-9ce3-4918-a411-4fb983f017a7">
+
+5. One can add reviewers to the pull requests by clicking on gear icon on right hand side of reviewers
+
+<img width="246" alt="ReviewersPR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/45fb0816-06fa-43f4-ba5f-77b551ffa8e6">
+
+6. Click on merge pull requests
+
+<img width="500" alt="MergePR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/43d708b1-1fc9-4177-9320-e77a4b3f52f4">
+
+7. now you can delete your branch using the below command
+```
+git push origin --delete yourname
+```
