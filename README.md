@@ -3,9 +3,84 @@
 1. [For git installation](https://learn.microsoft.com/en-us/devops/develop/git/install-and-set-up-git)
 2. [Git bash for microsoft](https://www.gitkraken.com/blog/what-is-git-bash)
 
-## Tutorial
+## Contents
+1. [Git Basic commands](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#git-basic-commands-1)
+2. [Getting Started](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#tutorial)
+3. [Challenges](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#challenges)
+   
+## [1] Git Basic commands
+1. For moving changes from working area to staging area we need to add the recently changed files in working area - 
+```
+git add <working area file path>
+```
+2. For committing files use the below command
+```
+git commit -m "<Your message>"
+```
+3. For viewing all the branches in local
+```
+git branch
+```
+4. For creating new branch
+```
+git checkout -b <new branch name>
+```
+5. For changing the branch
+```
+git checkout <branch name>
+```
+6. For deleting a branch locally
+```
+git branch -d <branch name>
+```
+7. For deleting a branch remotely
+```
+git push origin --delete <branch name>
+```
+8. For ammending a commit
+```
+git commit --amend -m "<Your message>"
+```
+9. For checking all the commits in a branch
+```
+git log
+```
+10. For pushing a commit to remote repo
+```
+git push origin <branch-name>
+```
+11. For pulling commits from a branch in remote repo to local repo
+```
+git pull origin <branch-name>
+```
+12. Merging a branch to your current branch
+```
+git merge <branch-name>
+```
+13. Rebasing a branch to your current branch
+```
+git rebase <branch-name>
+```
+14. For interactive rebasing
+```
+git rebase -i <branch-name>
+```
+
+15. To check which files or their changes are being tracked by git use the below command
+```
+git status
+```
+ - File path in red indicates that these files or their changes are not tracked by git (unstaged files)
+   <img width="431" alt="unstaged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/8082ac16-e04c-4b7b-b9db-185c890ac0af">
+
+ - File path in green indicates that these files or their changes are tracked by git but not yet commited (staged files)
+   <img width="332" alt="staged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/400a8cf8-333b-4aa8-a350-10dcb81e4ed2">
+
+It displays file paths that have differences between the index file and the current HEAD commit.
+
+## [2] Getting Started
 The aim of this section is to give hands on experience in git. 
-### Cloning a repository
+### 2.1 Cloning a repository
 1. Open git bash or terminal
 2. Traverse to the folder, where you want to clone the repository, using cd command
 ```
@@ -18,29 +93,8 @@ git clone <repo link>
 4. Repo link can be found by clicking on code
 <img width="313" alt="Screenshot 2024-04-09 123641" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/895e28a3-9b25-4a91-9d0c-f010349715dc">
 
-### Branch operations
-1. For viewing all the branches in local
-```
-git branch
-```
-2. For creating new branch
-```
-git checkout -b <new branch name>
-```
-3. For changing the branch
-```
-git checkout <branch name>
-```
-4. For deleting a branch locally
-```
-git branch -d <branch name>
-```
-5. For deleting a branch remotely
-```
-git push origin --delete <branch name>
-```
 
-### Commit a change
+### 2.2 Commit a change
 1. Open the repo in local using any python IDE
 2. Open the terminal from IDE
 3. Checkout a new branch with your name from main using checkout -b command
@@ -55,35 +109,19 @@ print("First print statement by <yourname>")
 ```
 git status
 ```
- - File path in red indicates that these files or their changes are not tracked by git (unstaged files)
-   <img width="431" alt="unstaged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/8082ac16-e04c-4b7b-b9db-185c890ac0af">
-
- - File path in green indicates that these files or their changes are tracked by git but not yet commited (staged files)
-   <img width="332" alt="staged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/400a8cf8-333b-4aa8-a350-10dcb81e4ed2">
-
-It displays file paths that have differences between the index file and the current HEAD commit.
-
 6. For adding practice.py to staged area use the below command
-```
-git add <unstaged file path>
-```
-In our example -  
 ```
 git add practice.py
 ```
 This is a pre-requisite step for comitting your changes
 
 
-7. For committing files use the below command
-```
-git commit -m "<Your message>"
-```
-In our example - 
+7. Commit the changes added in staging area
 ```
 git commit -m "First commit by yourname"
 ```
 
-### Push Pull
+### 2.3 Push Pull
 1. After the commit for pushing the changes to remote repo use the below command
 ```
 git push origin yourname
@@ -97,7 +135,7 @@ git checkout main
 git pull origin main
 ```
 
-### Merging a branch and committing it
+### 2.4 Merging a branch and committing it
 1. Checkout to your branch <yourname>
 2. Create a new branch from your branch <yourname> with name dummyBranch
 3. In the file practice.py add a print statement
@@ -120,7 +158,7 @@ git merge dummyBranch
 9. Again when you check all the commits, one can see the commit of dummyBranch in branch yourname
 
 
-### Raising a Pull Request
+### 2.5 Raising a Pull Request
 1. In the github repo, go to pull requests
 <img width="784" alt="PR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/dc698550-4efc-478d-8116-3d583787855f">
 
@@ -143,7 +181,13 @@ git merge dummyBranch
 
 <img width="500" alt="MergePR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/43d708b1-1fc9-4177-9320-e77a4b3f52f4">
 
-7. now you can delete your branch using the below command
+7. Now you can delete your branch using the below command
 ```
 git push origin --delete yourname
 ```
+## [3] Challenges
+## References
+1. https://www.atlassian.com/git/tutorials/merging-vs-rebasing
+2. https://www.atlassian.com/git/glossary#commands
+3. https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
+4. https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase#:~:text=From%20a%20content%20perspective%2C%20rebasing,them%20to%20the%20specified%20base.
