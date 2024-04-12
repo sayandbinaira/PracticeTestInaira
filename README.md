@@ -94,7 +94,16 @@ One can also do a soft reset between HEAD and the last nth commit from HEAD usin
 ```
 git reset --soft HEAD~n
 ```
-17. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId and to also discarding all the changes in the staging area perform hard reset
+17. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and preserving changes in the Working Directory, as unstaged changes perform mixed reset
+```
+git reset --mixed <commitId>
+```
+The changes will in the working directory and commits will be removed till commitId. this is the default mode of git reset. 
+One can also do a mixed reset between HEAD and the last nth commit from HEAD using the below command
+```
+git reset --mixed HEAD~n
+```
+18. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId and to also discarding all the changes in the staging area perform hard reset
 ```
 git reset --hard <commitId>
 ```
