@@ -61,10 +61,12 @@ git merge <branch-name>
 ```
 git rebase <branch-name>
 ```
-14. For interactive rebasing
+14. Interactive rebasing for squashing commits
 ```
-git rebase -i <branch-name>
+git rebase -i HEAD~n
 ```
+One can choose which commits to be squashed. For more details check the [Interactive Rebasing](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#25-interactive-rebasing) section in Getting Started.
+
 
 15. To check which files or their changes are being tracked by git use the below command
 ```
@@ -135,8 +137,8 @@ git checkout main
 git pull origin main
 ```
 
-### 2.4 Merging a branch and committing it
-1. Checkout to your branch <yourname>
+### 2.4 Merging a branch 
+1. Checkout to your branch yourname
 2. Create a new branch from your branch <yourname> with name dummyBranch
 3. In the file practice.py add a print statement
 ```
@@ -157,8 +159,28 @@ git merge dummyBranch
 ```
 9. Again when you check all the commits, one can see the commit of dummyBranch in branch yourname
 
+### 2.5 Interactive Rebasing 
+1. Create three dummy commits in branch yourname
+2. Do a git rebase using the below command
+```
+git rebase -i HEAD~3
+```
+3. This will open a text editor listing all of the commits that are about to be moved like this below
 
-### 2.5 Raising a Pull Request
+   <img width="344" alt="rebaseCommits" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/97f9d5c4-8af6-4ae5-a9de-7768011a5b81">
+
+4. Press I to go into insert mode in text editor in terminal
+5. Choose which commits to be squashed
+   
+   <img width="551" alt="rebaseSquashPick" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/7db0ed78-35c9-4151-a0d2-e40485bdf549">
+
+6. Press Ctrl + C and then type the below command to save and quit the text editor in terminal
+```
+:wq
+```
+7. One can check the commits now using git log
+
+### 2.6 Raising a Pull Request
 1. In the github repo, go to pull requests
 <img width="784" alt="PR" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/dc698550-4efc-478d-8116-3d583787855f">
 
