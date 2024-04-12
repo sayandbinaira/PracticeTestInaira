@@ -66,19 +66,53 @@ git rebase <branch-name>
 git rebase -i HEAD~n
 ```
 One can choose which commits to be squashed. For more details check the [Interactive Rebasing](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#25-interactive-rebasing) section in Getting Started.
-
+To rebase till a particular commitId - 
+```
+git rebase -i <commitId>
+```
 
 15. To check which files or their changes are being tracked by git use the below command
 ```
 git status
 ```
  - File path in red indicates that these files or their changes are not tracked by git (unstaged files)
+   
    <img width="431" alt="unstaged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/8082ac16-e04c-4b7b-b9db-185c890ac0af">
 
  - File path in green indicates that these files or their changes are tracked by git but not yet commited (staged files)
+   
    <img width="332" alt="staged" src="https://github.com/sayandbinaira/PracticeTestInaira/assets/137031724/400a8cf8-333b-4aa8-a350-10dcb81e4ed2">
 
 It displays file paths that have differences between the index file and the current HEAD commit.
+
+16. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and saving all the changes in the staging area perform soft reset
+```
+git reset --soft <commitId>
+```
+The changes will still be there in staging area but only commits will be removed till commitId. 
+One can also do a soft reset between HEAD and the last nth commit from HEAD using the below command
+```
+git reset --soft HEAD~n
+```
+17. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and preserving changes in the Working Directory, as unstaged changes perform mixed reset
+```
+git reset --mixed <commitId>
+```
+The changes will in the working directory and commits will be removed till commitId. this is the default mode of git reset. 
+One can also do a mixed reset between HEAD and the last nth commit from HEAD using the below command
+```
+git reset --mixed HEAD~n
+```
+18. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId and to also discarding all the changes in the staging area perform hard reset
+```
+git reset --hard <commitId>
+```
+HEAD will be pointing to commitId.
+One can also do a hard reset between HEAD and the last nth commit from HEAD using the below command
+```
+git reset --hard HEAD~n
+```
+    
 
 ## [2] Getting Started
 The aim of this section is to give hands on experience in git. 
@@ -208,8 +242,21 @@ git rebase -i HEAD~3
 git push origin --delete yourname
 ```
 ## [3] Challenges
+### 3.1 Diverging branches
+This arises when a branch say  have diverged from a commit say X in local and remote. It looks something like this:
+```
+a - b - c - d - e
+        \       ^ LOCAL
+         -- f 
+            ^ REMOTE
+```
+To know more about this refer the doc [Dealing with diverged git branches](https://jvns.ca/blog/2024/02/01/dealing-with-diverged-git-branches/)
+### 3.2 Merge conflict
+Conflicts generally arise when two people have changed the same lines in a file, or if one developer deleted a file while another developer was modifying it. In these cases, Git cannot automatically determine what is correct. Conflicts only affect the developer conducting the merge, the rest of the team is unaware of the conflict. To know more about this refer the doc [Git merge conflicts](https://www.atlassian.com/git/tutorials/using-branches/merge-conflicts)
 ## References
 1. https://www.atlassian.com/git/tutorials/merging-vs-rebasing
 2. https://www.atlassian.com/git/glossary#commands
 3. https://confluence.atlassian.com/bitbucketserver/basic-git-commands-776639767.html
 4. https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase#:~:text=From%20a%20content%20perspective%2C%20rebasing,them%20to%20the%20specified%20base.
+5. https://jvns.ca/blog/2024/02/01/dealing-with-diverged-git-branches/
+6. https://git-scm.com/
