@@ -9,59 +9,75 @@
 3. [Challenges](https://github.com/sayandbinaira/PracticeTestInaira/edit/main/README.md#challenges)
    
 ## [1] Git Basic commands
-1. For moving changes from working area to staging area we need to add the recently changed files in working area - 
+1. Configuring git to add name 
+```
+git config --global user.name <your full name>
+```
+2. Configuring git to add email 
+```
+git config --global user.email <your email>
+```
+3. To check the configuration
+```
+git config --global --list
+```
+4. For cloning a remote repo to local
+```
+git clone <repo link>
+```
+5. For moving changes from working area to staging area we need to add the recently changed files in working area - 
 ```
 git add <working area file path>
 ```
-2. For committing files use the below command
+6. For committing files use the below command
 ```
 git commit -m "<Your message>"
 ```
-3. For viewing all the branches in local
+7. For viewing all the branches in local
 ```
 git branch
 ```
-4. For creating new branch
+8. For creating new branch
 ```
 git checkout -b <new branch name>
 ```
-5. For changing the branch
+9. For changing the branch
 ```
 git checkout <branch name>
 ```
-6. For deleting a branch locally
+10. For deleting a branch locally
 ```
 git branch -d <branch name>
 ```
-7. For deleting a branch remotely
+11. For deleting a branch remotely
 ```
 git push origin --delete <branch name>
 ```
-8. For ammending a commit
+12. For ammending a commit
 ```
 git commit --amend -m "<Your message>"
 ```
-9. For checking all the commits in a branch
+13. For checking all the commits in a branch
 ```
 git log
 ```
-10. For pushing a commit to remote repo
+14. For pushing a commit to remote repo
 ```
 git push origin <branch-name>
 ```
-11. For pulling commits from a branch in remote repo to local repo
+15. For pulling commits from a branch in remote repo to local repo
 ```
 git pull origin <branch-name>
 ```
-12. Merging a branch to your current branch
+16. Merging a branch to your current branch
 ```
 git merge <branch-name>
 ```
-13. Rebasing a branch to your current branch
+17. Rebasing a branch to your current branch
 ```
 git rebase <branch-name>
 ```
-14. Interactive rebasing for squashing commits
+18. Interactive rebasing for squashing commits
 ```
 git rebase -i HEAD~n
 ```
@@ -71,7 +87,7 @@ To rebase till a particular commitId -
 git rebase -i <commitId>
 ```
 
-15. To check which files or their changes are being tracked by git use the below command
+19. To check which files or their changes are being tracked by git use the below command
 ```
 git status
 ```
@@ -85,7 +101,7 @@ git status
 
 It displays file paths that have differences between the index file and the current HEAD commit.
 
-16. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and saving all the changes in the staging area perform soft reset
+20. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and saving all the changes in the staging area perform soft reset
 ```
 git reset --soft <commitId>
 ```
@@ -94,7 +110,7 @@ One can also do a soft reset between HEAD and the last nth commit from HEAD usin
 ```
 git reset --soft HEAD~n
 ```
-17. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and preserving changes in the Working Directory, as unstaged changes perform mixed reset
+21. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId, and preserving changes in the Working Directory, as unstaged changes perform mixed reset
 ```
 git reset --mixed <commitId>
 ```
@@ -103,7 +119,7 @@ One can also do a mixed reset between HEAD and the last nth commit from HEAD usi
 ```
 git reset --mixed HEAD~n
 ```
-18. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId and to also discarding all the changes in the staging area perform hard reset
+22. For undoing all the changes made between where HEAD was pointing and the specified commit let's say commitId and to also discarding all the changes in the staging area perform hard reset
 ```
 git reset --hard <commitId>
 ```
@@ -260,3 +276,5 @@ Conflicts generally arise when two people have changed the same lines in a file,
 4. https://www.atlassian.com/git/tutorials/rewriting-history/git-rebase#:~:text=From%20a%20content%20perspective%2C%20rebasing,them%20to%20the%20specified%20base.
 5. https://jvns.ca/blog/2024/02/01/dealing-with-diverged-git-branches/
 6. https://git-scm.com/
+7. https://git-scm.com/book/en/v2/Customizing-Git-Git-Configuration
+8. https://git-scm.com/docs/git-config
